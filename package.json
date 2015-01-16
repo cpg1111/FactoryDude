@@ -1,0 +1,26 @@
+{
+  "name": "christian",
+  "version": "1.0.0",
+  "description": "A Node module to create mongoose objects for test data",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cpg1111/FactoryDude"
+  },
+  "keywords": [
+    "mongoose",
+    "tests"
+  ],
+  "author": "Christian Grabowski <christiang11754@gmail.com>",
+  "license": "apache",
+  "bugs": {
+    "url": "https://github.com/cpg1111/FactoryDude/issues"
+  },
+  "homepage": "https://github.com/cpg1111/FactoryDude",
+  "dependencies": {
+    "mongoose": "^3.8.21"
+  }
+}
