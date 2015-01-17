@@ -39,7 +39,12 @@ module.exports = function(){
 
 	this.destroy = function(factoryName){
 		var destroyModel = findFactory(factoryName);
-
+		factories.splice(findFactoryIndex(factoryName), 1);
+		destroyModel.remove({id: destroyModel.id}, function(err){
+			if(err){
+				throw err;
+			}
+		});
 	};
 
 	var hasAttribute = function(model, attr){
@@ -65,6 +70,24 @@ module.exports = function(){
 		}
 		if(match){
 			return matchModel;
+		}
+		else{
+			throw new Error('Factory does not exist');
+		}
+	};
+
+	var findFactoryIndex = function(factoryName){
+		var match = false;
+		var matchIndex = -1;
+		for (var i = 0; i < factories.length; i++) {
+			match = (factories[i].name == factoryName)
+			if(match){
+				matchIndex = i;
+				break;
+			}
+		}
+		if(match){
+			return matchIndex;
 		}
 		else{
 			throw new Error('Factory does not exist');

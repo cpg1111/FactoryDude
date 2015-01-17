@@ -52,3 +52,23 @@ describe('create one model and reference one of its attributes in another object
 		next();
 	});
 });
+describe('create a model then destroy it', function(){
+	it('should create a model then destroy it and not find the model', function(next){
+		var testPersonAttrs = {
+			firstName: 'Dummy',
+			lastName: 'Test',
+			greeting: 'Hi There',
+			birthday: new Date(),
+			age: 0
+		};
+		var newModel = factoryDude.factory('newModel','./spec/support/models/person',testPersonAttrs);
+		var checkModel = require('./support/models/person');
+		checkModel.findOne({firstName: newModel.firstName}, function(err, res){
+			if(err){
+				throw err;
+			}
+			expect(res).toBe(newModel);
+		});
+		factoryDude.destroy('newModel')
+	});
+});
