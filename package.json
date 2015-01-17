@@ -4,7 +4,7 @@
   "description": "A Node module to create mongoose objects for test data",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jasmine spec/**/*.js"
   },
   "repository": {
     "type": "git",

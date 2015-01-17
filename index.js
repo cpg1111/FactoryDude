@@ -40,7 +40,7 @@ module.exports = function(){
 	this.destroy = function(factoryName){
 		var destroyModel = findFactory(factoryName);
 
-	}
+	};
 
 	var hasAttribute = function(model, attr){
 		var result = false;
@@ -69,5 +69,5 @@ module.exports = function(){
 		else{
 			throw new Error('Factory does not exist');
 		}
-	}
+	};
 };
