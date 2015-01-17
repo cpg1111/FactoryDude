@@ -1,5 +1,7 @@
 module.exports = function(){
-	this.factory = function(relativePathToModel, newObject){
+	var factories = [];
+
+	this.factory = function(factoryName, relativePathToModel, newObject){
 		if(typeof newObject != 'object'){
 			throw new Error('FactoryDude can only take objects to create new mongoose entries');
 			return;
@@ -8,17 +10,64 @@ module.exports = function(){
 		var newModel = new model();
 		var attrCounter = 0;
 		for(var attr in newObject){
-			eval('newModel.'+attr+' = newObject.'+attr);
+			if(hasAttribute(newModel, attr)){
+				eval('newModel.'+attr+' = newObject.'+attr);
+			}
+			else{
+				throw new Error('Attribute: '+attr+' does not exist in model');
+			}
 		}
 		newModel.save(function(err){
 			if(err){
 				throw err;
 			}
 		});
-		return newModel
+		factories.push({name: factoryName, model: newModel});
+		return newModel;
 	};
 	
-	this.reference = function(queryArg){
+	this.reference = function(factoryName, attr){
+		var matchModel = findFactory(factoryName);
+		if(hasAttribute(matchModel, attr)){
+			return eval('matchModel.'+attr);
+		}
+		else{
+			throw new Error('Cannot reference '+factoryName+', '+attr+' does not exist within factory');
+		}
 		
 	};
+
+	this.destroy = function(factoryName){
+		var destroyModel = findFactory(factoryName);
+
+	}
+
+	var hasAttribute = function(model, attr){
+		var result = false;
+		for(var comparison in model){
+			result = (comparison == attr);
+			if(result){
+				break;
+			}
+		}
+		return result;
+	};
+
+	var findFactory = function(factoryName){
+		var match = false;
+		var matchModel = {};
+		for (var i = 0; i < factories.length; i++) {
+			match = (factories[i].name == factoryName)
+			if(match){
+				matchModel = factories[i].model;
+				break;
+			}
+		}
+		if(match){
+			return matchModel;
+		}
+		else{
+			throw new Error('Factory does not exist');
+		}
+	}
 };
