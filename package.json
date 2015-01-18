@@ -1,6 +1,6 @@
 {
-  "name": "christian",
-  "version": "1.0.0",
+  "name": "factorydude",
+  "version": "0.1.0",
   "description": "A Node module to create mongoose objects for test data",
   "main": "index.js",
   "scripts": {
