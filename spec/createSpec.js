@@ -63,12 +63,19 @@ describe('create a model then destroy it', function(){
 		};
 		var newModel = factoryDude.factory('newModel','./spec/support/models/person',testPersonAttrs);
 		var checkModel = require('./support/models/person');
-		checkModel.findOne({firstName: newModel.firstName}, function(err, res){
+		checkModel.findOne({id: newModel.id}, function(err, res){
 			if(err){
 				throw err;
 			}
 			expect(res).toBe(newModel);
 		});
-		factoryDude.destroy('newModel')
+		factoryDude.destroy('newModel');
+		checkModel.findOne({id: newModel.id}, function(err, res){
+			if(err){
+				throw err;
+			}
+			expect(res).toBe(null);
+		});
+		next();
 	});
 });
