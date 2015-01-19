@@ -19,7 +19,7 @@ Inspired by <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a
 
 ```
 	var FactoryDude = require('FactoryDude');
-	factoryDude = new FactoryDude();
+	var factoryDude = new FactoryDude();
 ```
 
 ### Create a Factory
