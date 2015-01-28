@@ -1,4 +1,6 @@
 # FactoryDude
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cpg1111/FactoryDude?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A Node module to create mongoose objects for test data
 
 <img src="https://travis-ci.org/cpg1111/FactoryDude.svg?branch=master" style="float: left;"/>
