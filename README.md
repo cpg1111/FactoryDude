@@ -1,8 +1,8 @@
 # FactoryDude
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cpg1111/FactoryDude?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A Node module to create mongoose objects for test data
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cpg1111/FactoryDude?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <img src="https://travis-ci.org/cpg1111/FactoryDude.svg?branch=master" style="float: left;"/>
 <img src="https://david-dm.org/cpg1111/FactoryDude.svg" style="float: left;"/>
 <a href="http://badge.fury.io/gh/cpg1111%2FFactoryDude"><img src="https://badge.fury.io/gh/cpg1111%2FFactoryDude.svg" style="float: left;" alt="GitHub version" height="18"></a>
