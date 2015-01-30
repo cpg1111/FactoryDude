@@ -11,7 +11,7 @@ module.exports = function(){
 		var attrCounter = 0;
 		for(var attr in newObject){
 			if(hasAttribute(newModel, attr)){
-				eval('newModel.'+attr+' = newObject.'+attr);
+				newModel[attr] = newObject[attr];
 			}
 			else{
 				throw new Error('Attribute: '+attr+' does not exist in model');
@@ -29,7 +29,7 @@ module.exports = function(){
 	this.reference = function(factoryName, attr){
 		var matchModel = findFactory(factoryName);
 		if(hasAttribute(matchModel, attr)){
-			return eval('matchModel.'+attr);
+			return matchModel[attr];
 		}
 		else{
 			throw new Error('Cannot reference '+factoryName+', '+attr+' does not exist within factory');
