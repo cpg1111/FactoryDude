@@ -8,7 +8,7 @@ A Node module to create mongoose objects for test data
 <a href="http://badge.fury.io/gh/cpg1111%2FFactoryDude"><img src="https://badge.fury.io/gh/cpg1111%2FFactoryDude.svg" style="float: left;" alt="GitHub version" height="18"></a>
 <a href="http://badge.fury.io/js/factorydude"><img src="https://badge.fury.io/js/factorydude.svg" alt="npm version" height="18" style="float: left;"></a>
 
-To be used in test suites (<a href="https://github.com/mochajs/mocha">mocha</a>, <a href="https://github.com/chaijs/chai">chai</a>, <a href="https://github.com/jasmine/jasmine">jasmine</a>, etc) for fetures that use <a href="https://github.com/LearnBoost/mongoose">mongoose</a> models.
+To be used in test suites (<a href="https://github.com/mochajs/mocha">mocha</a>, <a href="https://github.com/chaijs/chai">chai</a>, <a href="https://github.com/jasmine/jasmine">jasmine</a>, etc) for features that use <a href="https://github.com/LearnBoost/mongoose">mongoose</a> models.
 Inspired by <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a>
 
 ### Install
