@@ -7,23 +7,13 @@ module.exports = function(){
 			return;
 		}
 		var model = require(relativePathToModel);
-		var newModel = new model();
-		var attrCounter = 0;
-		for(var attr in newObject){
-			if(hasAttribute(newModel, attr)){
-				newModel[attr] = newObject[attr];
-			}
-			else{
-				throw new Error('Attribute: '+attr+' does not exist in model');
-			}
+		if(typeof model.methods !== 'undefined'){
+			var mongooseFactory = require('./lib/mongooseFactory');
+			mongooseFactory(factoryName, newObject, model, factories, hasAttribute);
 		}
-		newModel.save(function(err){
-			if(err){
-				throw err;
-			}
-		});
-		factories.push({name: factoryName, model: newModel});
-		return newModel;
+		else if(typeof model.create !== 'undefined'){
+			var sequelizeFactory = require('./lib/sequelizeFactory');
+		}
 	};
 	
 	this.reference = function(factoryName, attr){

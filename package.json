@@ -20,10 +20,10 @@
     "url": "https://github.com/cpg1111/FactoryDude/issues"
   },
   "homepage": "https://github.com/cpg1111/FactoryDude",
-  "dependencies": {
-    "mongoose": "^3.8.21"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "jasmine": "^2.1.1"
+    "jasmine": "^2.1.1",
+    "mongoose": "^4.0.1",
+    "sequelize": "^2.0.6"
   }
 }
